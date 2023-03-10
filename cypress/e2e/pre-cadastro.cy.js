@@ -10,15 +10,21 @@ describe('Funcionalidade Pré Cadastro', () => {
 
     it('Deve completar o pré-cadastro com sucesso', () => {
         //cy.get('#reg_email').type('marciopinheiro@ebac.com')
-        cy.get('#reg_email').type(faker.internet.email())
+
+        
+        let first_name_facker = faker.name.firstName()
+        let last_name_facke = faker.name.lastName()
+        let email_faker = faker.internet.email(first_name_facker)
+
+        cy.get('#reg_email').type(email_faker)
         cy.get('#reg_password').type('mpebac')
 
         cy.get(':nth-child(4) > .button').click()
 
         cy.get('.woocommerce-MyAccount-navigation-link--edit-account > a').click()
 
-        cy.get('#account_first_name').type(faker.name.firstName())
-        cy.get('#account_last_name').type(faker.name.lastName())
+        cy.get('#account_first_name').type(first_name_facker)
+        cy.get('#account_last_name').type(last_name_facke)
 
         cy.get('.woocommerce-Button').click()
 
