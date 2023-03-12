@@ -1,5 +1,5 @@
 {
-  "name": "exerc_modulo_11",
+  "name": "exerc_modulo_12",
   "version": "1.0.0",
   "description": "Início de Utilização de Cypress e Node.js",
   "main": "index.js",
@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^12.7.0"
+    "cypress": "^9.7.0"
   },
   "dependencies": {
     "@faker-js/faker": "^7.6.0",

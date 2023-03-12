@@ -5,7 +5,7 @@ describe('Funcionalidade Página de Produtos', () => {
     
 
     beforeEach(() => { 
-        cy.visit('http://lojaebac.ebaconline.art.br/produtos/' )
+        cy.visit('produtos')
     });
 
     it('Deve selecionar um produto da lista', () => {
@@ -36,5 +36,17 @@ describe('Funcionalidade Página de Produtos', () => {
 
 
     });    
+
+    it.only('Deve adicionar produtos ao carrinho - Usando comando customizado', () => {
+        
+        cy.addProdutos('Abominable Hoodie', 'M', 'Blue', 5) 
+
+    });
+    
+    it.only('Deve adicionar produtos ao carrinho - Usando comando customizado', () => {
+        
+        cy.addProdutos('Aero Daily Fitness Tee', 'M', 'Black', 2) 
+
+    });
 
 });
