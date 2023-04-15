@@ -6,6 +6,9 @@ describe('Funcionalidade Página de Produtos', () => {
 
     beforeEach(() => { 
         cy.visit('produtos')
+        
+        cy.fixture('perfil').then(dados => {
+            cy.login( dados.usuario, dados.senha )
     });
 
     it('Deve selecionar um produto da lista', () => {
@@ -37,15 +40,19 @@ describe('Funcionalidade Página de Produtos', () => {
 
     });    
 
-    it.only('Deve adicionar produtos ao carrinho - Usando comando customizado', () => {
+    it('Deve adicionar produtos ao carrinho - Usando comando customizado', () => {
         
-        cy.addProdutos('Abominable Hoodie', 'M', 'Blue', 5) 
+        cy.addProdutos('Abominable Hoodie', 'XS', 'Blue', 1) 
 
     });
     
-    it.only('Deve adicionar produtos ao carrinho - Usando comando customizado', () => {
+    it.only('Deve adicionar 4 produtos ao carrinho - Usando comando customizado', () => {
         
-        cy.addProdutos('Aero Daily Fitness Tee', 'M', 'Black', 2) 
+        cy.addProdutos('Atlas Fitness Tank', 'XL', 'Blue', 3 )
+        cy.addProdutos('Atlas Fitness Tank', 'S', 'Blue', 1 )
+//        cy.addProdutos('Arcadio Gym Short', '33', 'Black', 1) 
+        cy.addProdutos('Atlas Fitness Tank', 'XS', 'Blue', 1 )
+        cy.addProdutos('Abominable Hoodie', 'XS', 'Blue', 3) 
 
     });
 
